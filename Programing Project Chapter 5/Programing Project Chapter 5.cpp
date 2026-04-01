@@ -8,20 +8,32 @@ using namespace std;
 
 int main()
 {
-    cout << "This program output the Celsius and Fahriodfnsoa tempuratures \n";
-    cout << "For 0 to 20\n";
-    cout << "C         F\n";
-    cout << "_________________\n";
+	//create vars to hold highest and lowest
+	int high=0;
+	int low=0;
+	int input;
 
-    //loop through values
-    for (int i = 0; i <= 20; i++)
-    {
-        //calculate F tempurature
-        double ftemp = i * 9 / 5.0 + 32;
-        cout << setprecision(2) << fixed << showpoint;
-        cout << "C:"<<setw(4) << i << setw(6) << "| F:" << setw(4) << ftemp << endl;
-    }
+	cout << "Enter numbers, -99 to end";
 
+	cin >> input;
+	high = input;
+	low = input;
+	while (input != -99)
+	{
+		if (input > high)
+		{
+			high = input;
+		}
+		if (input < low)
+		{
+			low = input;
+		}
+
+		cin >> input;
+	}
+
+	cout << "Highest:" << high << endl;
+	cout << "Lowest:" << low << endl;
 
     return 0;
 }
