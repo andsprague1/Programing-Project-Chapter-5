@@ -21,12 +21,27 @@ int main()
 		cin >> fileName;
 		inFile.open(fileName);
 	}
+	int storeNum = 1;
+	while (!inFile.eof())
+	{
+		int totalSales;
+		inFile>>totalSales;
+		int astNum;
+		astNum = totalSales / 100;
 
+		cout << "Store:" << storeNum<<" :";
+
+		for (int i = astNum; i > 0; i--)
+		{
+			cout << "*";
+		}
+
+		cout << endl;
+
+		storeNum++;
+	}
 	/*
-		If(file is not valid) :
-		While file is not valid :
-		Input filename
-		Try to reopen file;
+		
 	For each line in file :
 	Calculate number of asterisks
 		Output “Store” i
