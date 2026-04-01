@@ -2,13 +2,39 @@
 //
 
 #include <iostream>
+#include<fstream>
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!\n";
+    //Input filename
+	string fileName;
+	ifstream inFile;
+	cout << "Please enter the file name:";
+	cin >> fileName;
+	//open File
+	inFile.open(fileName);
+	while (!inFile)
+	{
+		cout << "Please enter a valid filename:";
+		cin >> fileName;
+		inFile.open(fileName);
+	}
 
+	/*
+		If(file is not valid) :
+		While file is not valid :
+		Input filename
+		Try to reopen file;
+	For each line in file :
+	Calculate number of asterisks
+		Output “Store” i
+		For number of asterisks
+		Output*
+		End line*/
+
+	inFile.close();
     return 0;
 }
 
